@@ -22,7 +22,8 @@
         :value="text"
         :placeholder="innerPlaceholder"
         @input="handleInput"
-        @change="handleChange">
+        @change="handleChange"
+        @keydown="$emit('keydown', $event)">
       <span class="mx-input-append">
         <slot name="calendar-icon">
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 200 200" class="mx-calendar-icon">
