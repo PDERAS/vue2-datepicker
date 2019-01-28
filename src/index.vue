@@ -466,7 +466,21 @@ export default {
       }
     },
     handleInput (event) {
-      this.userInput = event.target.value
+      const num = event.target.value.replace(/\D/g, "");
+      const regex = /(\d{0,2})(\d{0,2})(\d{0,4})/;
+      const m = regex.exec(num);
+      let formatted = "";
+
+      if (m[1].length) {
+          formatted = `${m[1]}`;
+      }
+      if (m[2].length) {
+          formatted += `/${m[2]}`;
+      }
+      if (m[3].length) {
+          formatted += `/${m[3]}`;
+      }
+      this.userInput = formatted
     },
     handleChange (event) {
       const value = event.target.value

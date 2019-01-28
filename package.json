@@ -94,12 +94,6 @@
       "^@/(.*)$": "<rootDir>/src/$1"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -x @commitlint/config-conventional -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "**/*.{js,jsx}": [
       "eslint --fix",
